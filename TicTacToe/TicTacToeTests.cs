@@ -260,6 +260,18 @@ namespace TicTacToe {
             Assert.True(board.IsGameOver);
             Assert.Equal(1, board.Winner);
         }
+        [Fact]
+        public void Make9Moves_SecondPlayerGetsRowDownMiddleColumn_WinnerIsPlayer2() {
+            var board = GameBoard.CreateGame();
+            board.MakePlay(0);
+            board.MakePlay(1);
+            board.MakePlay(3);
+            board.MakePlay(4);
+            board.MakePlay(2);
+            board.MakePlay(7);
+            Assert.True(board.IsGameOver);
+            Assert.Equal(2, board.Winner);
+        }
 
     }
 }
